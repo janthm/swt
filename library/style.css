@@ -1,0 +1,15 @@
+.navbar {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	border: 0; margin: 0;
+	background-color: #DDD;
+}
+
+.page {
+	margin-top: 50px;
+}
+
+a {
+	cursor: pointer;
+}
