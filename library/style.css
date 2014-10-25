@@ -1,12 +1,43 @@
+body {
+	background-color: #EEEEEE;
+}
+
+.navbar, .navbar-default, .form-control, .btn {
+	border-radius: 0;
+}
+
 .navbar {
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%;
+	background-color: #000;
 	border: 0; margin: 0;
-	background-color: #DDD;
 }
 
-.page {
+.navbar-nav li a {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover {
+	color: #aaa !important;
+}
+
+.navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-brand:hover {
+	color: #aaa !important;
+}
+
+.navbar-brand i {
+	font-size: 23px !important; 
+	line-height: 23px !important; 
+	vertical-align: middle !important;
+	margin-right: 8px;
+}
+
+.main .page {
 	margin-top: 50px;
 }
 

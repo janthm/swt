@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+	<title>Jan says: "Hello World!"</title>
+	
     <link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="../library/onepage-scroll.css"></link>
     <link rel="stylesheet" type="text/css" href="../library/style.css"></link>
@@ -16,15 +18,15 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a id="home-link" class="navbar-brand">Jan Sladek</a>
+				<a id="homelnk" class="navbar-brand"><i class="glyphicon glyphicon-home"></i>Jan Sladek</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a id="aboutme-link" >About Me</a></li>
-					<li><a id="shenanigans-link" >Shenanigans</a></li>
+					<li><a id="aboutmelnk" href="#">About Me</a></li>
+					<li><a id="shenaniganslnk" href="#">Shenanigans</a></li>
 				</ul>
 <!-- 				<form class="navbar-form navbar-left" role="search"> -->
 <!-- 					<div class="form-group"> -->
@@ -73,15 +75,15 @@
 			responsiveFallback : false,
 			direction : "vertical"  
 		});
-    	$("#home-link").on("click", function(e) {
+    	$("#homelnk").click(function(e) {
     		e.preventDefault();
 			$(".main").moveTo(1);
 		});
-		$("#aboutme-link").on("click", function(e) {
+		$("#aboutmelnk").click(function(e) {
 			e.preventDefault();
 			$(".main").moveTo(2);
 		});
-		$("#shenanigans-link").on("click", function(e) {
+		$("#shenaniganslnk").click(function(e) {
 			e.preventDefault();
 			$(".main").moveTo(3);
 		});
