@@ -8,6 +8,9 @@ app.set('view engine', 'html');
 app.use(express.logger());
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/library'));
 
 var domain = process.env.DOMAIN || '';
 var port = process.env.PORT || 5000;
