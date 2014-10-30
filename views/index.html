@@ -2,73 +2,80 @@
 <html>
 <head>
 <title>Jan says: "Hello World!"</title>
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css"></link>
-<link rel="stylesheet" type="text/css" href="../library/onepage-scroll.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="../library/bootstrap/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="../library/onepage-scroll.css"></link>
 <link rel="stylesheet" type="text/css" href="../library/style.css"></link>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../library/jquery.onepage-scroll.min.js"></script>
-	<script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../library/jquery.onepage-scroll.min.js"></script>
+<script type="text/javascript"
+	src="../library/bootstrap/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript">
+<script type="text/javascript">
+	$(document).ready(function() {
+		var content = $(".content");
+		var home = $("#homelnk");
+		var aboutme = $("#aboutmelnk");
+		var shenanigans = $("#shenaniganslnk");
 
-		$(document).ready(function() {
-			var content = $(".content");
-			var home = $("#homelnk");
-			var aboutme = $("#aboutmelnk");
-			var shenanigans = $("#shenaniganslnk");
-			var impressum = $("#impressumlnk");
-			
-			home.click(function(e) {
-				e.preventDefault();
-				content.moveTo(1);
-			});
-			aboutme.click(function(e) {
-				e.preventDefault();
-				content.moveTo(2);
-			});
-			shenanigans.click(function(e) {
-				e.preventDefault();
-				content.moveTo(3);
-			});
-			impressum.click(function(e) {
-				e.preventDefault();
-				content.moveTo(4);
-			});
-
-			content.onepage_scroll({
-				sectionContainer : "section",
-				easing : "ease",
-
-				animationTime : 1000,
-				pagination : true,
-				updateURL : false,
-				beforeMove : function(index) {
-				},
-				afterMove : function(index) {
-				},
-				loop : false,
-				keyboard : false,
-				responsiveFallback : false,
-
-				direction : "vertical"
-			});
+		home.click(function(e) {
+			e.preventDefault();
+			document.title = "Home";
+			content.moveTo(1);
 		});
-	
-	</script>
+		aboutme.click(function(e) {
+			e.preventDefault();
+			document.title = "About Me";
+			content.moveTo(2);
+		});
+		shenanigans.click(function(e) {
+			e.preventDefault();
+			document.title = "Shenanigans";
+			content.moveTo(3);
+		});
+
+		content.onepage_scroll({
+			sectionContainer : "section",
+			easing : "ease",
+
+			animationTime : 1000,
+			pagination : true,
+			updateURL : false,
+			beforeMove : function(index) {
+			},
+			afterMove : function(index) {
+			},
+			loop : false,
+			keyboard : false,
+			responsiveFallback : false,
+
+			direction : "vertical"
+		});
+	});
+</script>
 </head>
 <body>
 
 	<div class="content">
-		<section class="page" id="home">HOME</section>
+		<section class="page" id="home">
+			<h2>Welcome to this homepage.</h2>
+		</section>
 
-		<section class="page" id="aboutme">ABOUT ME</section>
-
-		<section class="page" id="shenanigans">SHENANIGANS</section>
-		
-		<section class="page" id="impressum">IMPRESSUM</section>
+		<section class="page" id="aboutme">
+			<h2>About Me</h2>
+			Hello World!</br>Let me introduce myself: I'm a Jan! </br>I study in a
+			technological influenced university in Giessen, Germany. 
+		</section>
+		<section class="page" id="shenanigans">
+			<h2>Shenanigans</h2>
+			To be implemented (Maybe)
+		</section>
 	</div>
 
 	<nav class="navbar navbar-default">
@@ -81,18 +88,19 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a id="homelnk" class="navbar-brand"><i class="glyphicon glyphicon-home"></i>Jan Sladek</a>
+				<a id="homelnk" class="navbar-brand"><i
+					class="glyphicon glyphicon-home"></i>Jan Sladek</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a id="aboutmelnk" >About Me</a></li>
-					<li><a id="shenaniganslnk" >Shenanigans</a></li>
+					<li><a id="aboutmelnk">About Me</a></li>
+					<li><a id="shenaniganslnk">Shenanigans</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a id="impressumlnk" >Impressum</a></li>
+					<li><a id="impressumlnk" href="impressum.html">Impressum</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -101,6 +109,6 @@
 	</nav>
 
 
-	
+
 </body>
 </html>

@@ -41,7 +41,8 @@ body {
 	margin-top: 50px;
 }
 
-.page {
+.content .page {
+	text-align: center;	
 }
 
 a {
