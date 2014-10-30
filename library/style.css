@@ -37,12 +37,11 @@ body {
 	margin-right: 8px;
 }
 
-.content .page {
+.content {
 	margin-top: 50px;
 }
 
 .page {
-	height: 100% - 50px;
 }
 
 a {
