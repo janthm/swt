@@ -1,23 +1,88 @@
 <!doctype html>
 <html>
 <head>
-	<title>Jan says: "Hello World!"</title>
+<title>Jan says: "Hello World!"</title>
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="../library/onepage-scroll.css"></link>
+<link rel="stylesheet" type="text/css" href="../library/style.css"></link>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../library/jquery.onepage-scroll.min.js"></script>
+	<script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			var content = $(".content");
+			var home = $("#homelnk");
+			var aboutme = $("#aboutmelnk");
+			var shenanigans = $("#shenaniganslnk");
+			var impressum = $("#impressumlnk");
+			
+			home.click(function(e) {
+				e.preventDefault();
+				content.moveTo(1);
+			});
+			aboutme.click(function(e) {
+				e.preventDefault();
+				content.moveTo(2);
+			});
+			shenanigans.click(function(e) {
+				e.preventDefault();
+				content.moveTo(3);
+			});
+			impressum.click(function(e) {
+				e.preventDefault();
+				content.moveTo(4);
+			});
+
+			content.onepage_scroll({
+				sectionContainer : "section",
+				easing : "ease",
+
+				animationTime : 1000,
+				pagination : true,
+				updateURL : false,
+				beforeMove : function(index) {
+				},
+				afterMove : function(index) {
+				},
+				loop : false,
+				keyboard : false,
+				responsiveFallback : false,
+
+				direction : "vertical"
+			});
+		});
 	
-    <link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="../library/onepage-scroll.css"></link>
-    <link rel="stylesheet" type="text/css" href="../library/style.css"></link>
+	</script>
 </head>
 <body>
-	<nav class="navbar navbar-default" role="navigation">
+
+	<div class="content">
+		<section class="page" id="home">HOME</section>
+
+		<section class="page" id="aboutme">ABOUT ME</section>
+
+		<section class="page" id="shenanigans">SHENANIGANS</section>
+		
+		<section class="page" id="impressum">IMPRESSUM</section>
+	</div>
+
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <spanclass="icon-bar"></span>
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
 				</button>
-				<a id="home" class="navbar-brand"><i class="glyphicon glyphicon-home"></i>Jan Sladek</a>
+				<a id="homelnk" class="navbar-brand"><i
+					class="glyphicon glyphicon-home"></i>Jan Sladek</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,72 +92,16 @@
 					<li><a id="aboutmelnk" href="#aboutme">About Me</a></li>
 					<li><a id="shenaniganslnk" href="#shenanigans">Shenanigans</a></li>
 				</ul>
-<!-- 				<form class="navbar-form navbar-left" role="search"> -->
-<!-- 					<div class="form-group"> -->
-<!-- 						<input type="text" class="form-control" placeholder="Search"> -->
-<!-- 					</div> -->
-<!-- 					<button type="submit" class="btn btn-default">Submit</button> -->
-<!-- 				</form> -->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Link</a></li>
+					<li><a id="#impressumlnk" href="#impressum">Impressum</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
+
+
 	
-	<div class="main">
-		<section class="page" id="home">
-			HOME
-		</section>
-		
-		<section class="page" id="aboutme">
-			ABOUT ME
-		</section>
-		
-		<section class="page" id="shenanigans">
-			SHENANIGANS
-		</section>
-	</div>
-	
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../library/jquery.onepage-scroll.min.js"></script>
-    <script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var main, home, aboutme, shenanigans;
-
-			if (!main) {
-				main = $(".main");
-				home = $("#homelnk");
-				aboutme = $("#aboutmelnk");
-				shenanigans = $("#shenaniganslnk");
-			}
-
-			main.onepage_scroll({
-				sectionContainer : "section",
-				easing : "ease",
-
-				animationTime : 500,
-				pagination : true,
-				updateURL : false,
-				loop : true,
-				keyboard : true,
-				responsiveFallback : false,
-				direction : "vertical"
-			});
-			home.click(function(e) {
-				console.log("click");
-			});
-			aboutme.click(function(e) {
-				console.log("click");
-			});
-			shenanigans.click(function(e) {
-				console.log("click");
-			});
-		});
-	</script>
 </body>
 </html>
